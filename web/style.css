@@ -1,0 +1,135 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  overflow: hidden;
+  background: #000;
+  font-family: 'Courier New', monospace;
+  color: #ccc;
+  user-select: none;
+}
+
+#gameCanvas {
+  display: block;
+  flex: 1 1 auto;
+  min-height: 0;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+/* ── HUD ─────────────────────────────────────────────────────────────────── */
+#hud {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background: #111;
+  border-top: 1px solid #2a2a2a;
+  flex-wrap: wrap;
+  min-height: 46px;
+}
+
+/* ── Element buttons ─────────────────────────────────────────────────────── */
+#elements {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.elem-btn {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  border-bottom: 3px solid var(--color, #555);
+  color: #aaa;
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+}
+.elem-btn:hover {
+  background: #2a2a2a;
+  color: #eee;
+}
+.elem-btn.active {
+  background: #2c2c2c;
+  border-color: var(--color, #888);
+  color: #fff;
+  box-shadow: 0 0 6px var(--color, #555);
+}
+.elem-btn .key {
+  color: #555;
+  margin-right: 4px;
+}
+.elem-btn.active .key {
+  color: #888;
+}
+
+/* ── Right controls ──────────────────────────────────────────────────────── */
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.label { color: #555; font-size: 11px; }
+
+.divider {
+  width: 1px;
+  height: 18px;
+  background: #333;
+}
+
+#controls button {
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #bbb;
+  padding: 3px 10px;
+  font: inherit;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+#controls button:hover {
+  background: #2a2a2a;
+  border-color: #555;
+  color: #fff;
+}
+
+#brushDown, #brushUp {
+  padding: 3px 8px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+#brushDisplay {
+  letter-spacing: 3px;
+  font-size: 13px;
+  color: #ccc;
+  min-width: 68px;
+  text-align: center;
+}
+
+#fpsDisplay { color: #5a9; font-size: 12px; }
+
+#pauseBadge {
+  color: #fa0;
+  font-weight: bold;
+  font-size: 12px;
+  display: none;
+}

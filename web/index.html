@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Falling Sand</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+
+  <div id="hud">
+    <div id="elements"></div>
+    <div id="controls">
+      <div class="control-group">
+        <span class="label">Brush</span>
+        <button id="brushDown" title="[ to decrease">−</button>
+        <span id="brushDisplay">■□□□□</span>
+        <button id="brushUp" title="] to increase">+</button>
+      </div>
+      <div class="divider"></div>
+      <span id="fpsDisplay" title="frames per second">60 fps</span>
+      <div class="divider"></div>
+      <button id="pauseBtn" title="P to toggle">Pause</button>
+      <button id="resetBtn" title="R to reset">Reset</button>
+      <span id="pauseBadge">⏸ PAUSED</span>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
